@@ -22,6 +22,8 @@ public:
     void pop(int index);
     void insert(int value);
     void insert(int value, int index);
+    char* to_cstring();
+    int* get();
     
 };
 
@@ -57,5 +59,21 @@ void cintstack_t::pop(int index) {
         throw std::invalid_argument("Index out of bounds");
     }
     this->arr[index] = 0;
+}
+
+char* cintstack_t::to_cstring() {
+    char* result = new char[this->size]();
+    //TODO > 9 ints
+    // 48 = 0 id in ascii
+    for (int i = 0; i < this->size; i++) {
+        result[i] = this->arr[i] + 48;
+    }
+    result[this->size] = '\0';
+    return result;
+}
+
+
+int* cintstack_t::get() {
+    return this->arr;
 }
 #endif
