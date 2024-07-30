@@ -14,6 +14,9 @@ int main(int argc, char* argv[]) {
     tmp.print();
     tmp.insert(9);
     tmp.print();
+    char * res = tmp.to_cstring();
+    std::cout << res;
+    tmp.print();
 
     return 0;
 }
