@@ -20,7 +20,9 @@ public:
         this->arr = new int[size];
         this->size = size;
     }
-
+    ~cintstack_t() {
+        delete[] arr;
+    }
     void print();
     void pop();
     void pop(int index);
