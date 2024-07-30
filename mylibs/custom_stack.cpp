@@ -42,7 +42,7 @@ void cintstack_t::insert(int value) {
 
 void cintstack_t::insert(int value, int index) {
     if (index >= this->size) {
-        throw std::invalid_argument("index error");
+        throw std::invalid_argument("Index out of bounds");
     }
     this->arr[index] = value;
 
@@ -53,6 +53,9 @@ void cintstack_t::pop() {
 }
 
 void cintstack_t::pop(int index) {
+    if (index < 0 || index >= size) {
+        throw std::invalid_argument("Index out of bounds");
+    }
     this->arr[index] = 0;
 }
 #endif
