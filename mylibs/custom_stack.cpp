@@ -8,16 +8,10 @@ class cintstack_t {
 private:
     int* arr;
     int size;
-
-    void set_zeros() {
-        for (int i = 0; i < this->size; i++) {
-            this->arr[i] = 0;
-        }
-    }
     
 public:
     cintstack_t (int size) {
-        this->arr = new int[size];
+        this->arr = new int[size]();
         this->size = size;
     }
     ~cintstack_t() {
